@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 17px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -180,6 +180,10 @@ img {
   }
 }
 
+.site-logo {
+  height: 70px;
+}
+
 .site-info {
   float: left;
 
@@ -252,15 +256,6 @@ nav {
 }
 
 .post {
-  blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
-  }
-
   .comments {
     margin-top: 10px;
   }
@@ -271,6 +266,15 @@ nav {
   }
 }
 
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $gray;
+    padding: 0.1em 1em;
+    color: $gray;
+    font-size: 20px;
+    font-style: italic;
+  }
+  
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;

@@ -6,10 +6,11 @@
 name: Eve Corp.
 
 # Short bio or description (displayed in the header)
-description: Software that Evolves
+description: #Creating Software that Evolves
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: \images\icon_140_140.png
+logo: \images\logo_sub_140_375.png
 
 #
 # Flags below are optional
@@ -21,7 +22,7 @@ footer-links:
   email: info@eve-corp.com
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: 
   instagram:
   linkedin:
   pinterest:
