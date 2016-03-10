@@ -8,7 +8,7 @@ Just started in 2015, we bring passion and energy to the industry backed by year
 
 We are woman-owned small business based out of Lacey, Washington.
 
-### Whan clients say
+### What clients say
 
 > I really enjoyed working with Eve and would work with her again in a heartbeat.  
 
