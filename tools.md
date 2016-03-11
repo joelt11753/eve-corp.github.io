@@ -8,11 +8,14 @@ tools:
   - name: CSS
   - name: Entity Framework
   - name: HTML
-  - name: KnockoutJs
-  - name: MVC
   - name: JavaScript
   - name: jQuery
+  - name: KnockoutJs
+  - name: MVC
+  - name: RESTful services
+  - name: Test Driven Development
   - name: SQL Server
+  - name: Web API
   - name: Windows
 ---
 

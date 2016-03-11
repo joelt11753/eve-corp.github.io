@@ -44,7 +44,7 @@ We take an iterative approach so that you can see progress along the way, and yo
 
 ### Our Tools
 
-We are most comfortable with Microsoft and related web technologies.  [See the full list.](tools.html)
+We are most comfortable with Microsoft and related web technologies.  [See the full list.](tools)
 
 ### Want to get in touch?
 
