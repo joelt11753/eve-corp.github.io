@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Why you should avoid preprocessor Directives  
+title: Why you should avoid preprocessor directives  
 ---
 
-# What preprocessor directives are all about
-Preprocessor directives are directions to the compiler to change the code at build time.  Just typing that it actually sounds kind of wrong.  But let's ignore that for a moment and think about good situations where this sounds less-bad.  Maybe you have special test code.  Maybe for developing locally you want to allow more relaxed passwords or a longer session timeout.  Or maybe you want to enforce SSL on the login method in production but not during development. 
+Preprocessor directives are directions to the compiler to change the code at build time, which might sound amazing but has some drawbacks.  But let's ignore that for a moment and think about good situations where this sounds less-bad.  Maybe you have special test code.  Maybe for developing locally you want to allow more relaxed passwords or a longer session timeout.  Or maybe you want to enforce SSL on the login method in production but not during development. 
 
 # A Non-Hypothetical Scenario
 
@@ -42,14 +41,14 @@ Here are two situations I ran into:
 
 ## Situation 2: When running integration tests on a build server or other dedicated test machine.
 
-  ### Cause
+### Cause
   After you have your build server and integration tests, you want to put them into an automated build environment, have the code magically deployed and integration tests ran.  All this followed by pretty emails telling you exactly what failed and who did it.
   
   You want to test the release version of your code -- not the debug version. 
   
   Let's say you decide that `localhost` will suffice.  Since you have other things running on port `80`, you choose another one, say `8080`.
   
-  ### Effect  
+### Effect  
   Now you run your tests -- this is what happens:
   
   ![Login Redirection]({{ site.url }}/images/2016/login redirects.png)
@@ -68,7 +67,7 @@ Here are two situations I ran into:
   
    `Not Found 404`
   
-  ### Reaction
+### Reaction
   No good.  But this is a controlled environment.  So you check IIS and the SSL Settings.  You look through all the `web.config` transformations for any URL Rewrites.  You check IIS for URL Rewrites.  Of course, everything looks good.
   
   You repeat the same web searches from above and, of course, you don't find anything of value.  Additionally, the searches in general tend to be somewhat useless because most people are trying to do the opposite with web queries like `how can I redirect http to https in (OWIN / IIS / UrlRewrite / MVC / Apache / etc)`.  No dice.

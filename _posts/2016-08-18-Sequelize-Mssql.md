@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Getting starting with Sequelize and MSSQL
+title: Getting started with Sequelize and MSSQL
 keywords: node, sequelize, mssql, sqlexpress
 ---
 
-## A little background
 Sequelize is an ORM which provides for interaction between a number of databases, among which is MS SQL.  To manage the MS SQL communication, it leverages another library, `tedious`.
+Here are some things to help you get it set up. 
 
 # JavaScript Setup
-You should specify the connection properties with the sequelize parameters -- sorry, but the MSSQL Connection String won't work here.  
-Due to the other issues I ran into, I gave up trying to get the URI paramater to work, too, though in theory in should. 
+You should specify the connection properties with the sequelize parameters since, unfortunately, the standard MSSQL Connection String won't work here.  Additionally, due to the other issues I ran into, I gave up trying to get the URI paramater to work, though in theory it should be workable. 
 
 Below is a basic configuration with some extra parameters defined that you'll probably want.
+
 ``` JS
 // sequelize.js
 import Sequelize from 'sequelize'
@@ -35,7 +35,7 @@ const sequelize = new Sequelize('MyDatabase', 'login', 'password', {
 export default sequelize
 ```
 
-An easy way to get testing this is below, taken from the [sequelize website](http://docs.sequelizejs.com/en/latest/docs/getting-started/) and wrapped in a test
+An easy way to get testing this is to use sequelize's built-in `authenticate()` function, taken from the [sequelize website](http://docs.sequelizejs.com/en/latest/docs/getting-started/) and wrapped in a test
 
 ``` JS
 // sequelize.test.js
@@ -50,18 +50,20 @@ describe('sequelize', () => {
             })
             .catch(function (err) {
                 console.log('Unable to connect to the database:', err);
+                throw err;
             });
     })
 })
 ```
 
+If you're lucky and that worked, you can stop here.  If you were like me and need more, keep reading.
+
 
 # Machine / Database Configuration
-*This is where it gets really fun...*
 
 **1) You must enable TCP/IP in SQL Server Configuration Manager**
 
-<img src="/images/sql enable tcp.png" alt="enable tcp screenshot" />
+<img src="/images/2016/sql enable tcp.png" alt="enable tcp screenshot" />
     
 #### Help: I can't find SQL Server Configuration Manager!
 
@@ -81,14 +83,18 @@ ex: `SQLServerManager12.msc`  You may swap out the "12" to match your version of
 
 *(Error: `SequelizeConnectionError: Failed to connect to localhost:undefined in 15000ms`)*
 
-<img src="/images/sql services.png" alt="sql services screenshot" />
+<img src="/images/2016/sql services.png" alt="sql services screenshot" />
 
     If it's not running, don't forget to setup `Automatic` start for the future! 
 
 **4) The login you're using should be mapped to the database you're trying to access.**
 
 1) Right click the Database Server and click `Properties`
-1) Go to `Security` page
-1) Under `Server Authentication`, choose the `SQL Server and Windows Authentication mode` radio button
-1) Click `OK`
-1) Restart your server
+
+2) Go to the `Security` page
+
+3) Under `Server Authentication`, choose the `SQL Server and Windows Authentication mode` radio button
+
+4) Click `OK`
+
+5) Restart the Database Server by right-clicking and it and selecting `Restart`
