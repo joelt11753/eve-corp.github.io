@@ -4,8 +4,6 @@ title: SQL Operations - Flagging Records as Not Found
 keywords: sql, etl, notfound, not found, exclude, merge, merging data, identifying missing records, missing
 ---
 
-# SQL Operations - Flagging Records as Not Found
-
 I came across an interesting scenario for one of my clients.  They have a system which scans database hardware, and then merges the metadata into another database for reporting.
 
 When metadata is pulled, it goes into a harvesting database along with metadata such as which job it was part of, when it was ran, which servers were harvested, etc.  After the data is harvested, another process is responsible for updating a target database, which is used by alternate applications for reporting "current status".
