@@ -20,6 +20,7 @@ Assume that a previous harvest->merge cycle has already put this data into our t
 
 Scan Data
 
+{:.table}
 ScanId | ObjectId | Name | Type
 --- | --- | --- | ---
 1 | 1 | `Persons` | Table
@@ -28,6 +29,7 @@ ScanId | ObjectId | Name | Type
 
 Target Data
 
+{:.table}
 ObjectId | Name | Type | NotFound
 --- | --- | --- | ---
 1 | `Persons` | Table | NULL
@@ -40,6 +42,7 @@ Now assume that between the last run, and this run, somebody removed the `Zip` c
 
 Scan Data
 
+{:.table}
 ScanId | ObjectId | Name | Type
 ---  |--- | --- | ---
 1 | 1 | `Persons` | Table
@@ -112,8 +115,10 @@ WHERE
 The final result will give an **empty dataset**, which is not what we want.
 
 
+{:.table}
 TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 --- | ---| --- | --- | ---
+| | | | 
 
 
 #### Why the Wrong Way doesn't work
@@ -135,6 +140,7 @@ LEFT JOIN @ScanObjects AS ScanObject
 
 We get this:
 
+{:.table}
 TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 --- | ---| --- | --- | ---
 1 | 1 | 1 | `Persons` | Table
@@ -163,6 +169,7 @@ WHERE
 ```
 
 
+{:.table}
 TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 --- | ---| --- | --- | ---
 1 | 1 | 2 | `Persons` | Table
@@ -184,6 +191,7 @@ SELECT *
     WHERE ScanObject.ScanId = @ScanId
 ```
 
+{:.table}
 ScanId | ObjectId | Name | Type
 --- | --- | --- | ---
 2 | 1 | `Persons` | Table
@@ -210,6 +218,7 @@ WHERE
     ScanObject.ObjectId IS NULL
 ```
 
+{:.table}
 TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 --- | ---| --- | --- | ---
 3 | `NULL` | `NULL` | `Zip` | Column
@@ -239,6 +248,7 @@ SELECT * FROM @TargetObjects
 
 Looks good!
 
+{:.table}
 ObjectId | NAME | TYPE | NotFound
 --- | --- | --- | ---
 1 | `Persons` | Table | NULL
