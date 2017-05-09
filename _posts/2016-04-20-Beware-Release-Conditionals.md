@@ -9,7 +9,7 @@ Preprocessor directives are directions to the compiler to change the code at bui
 
 Consider the code below from an ASP.NET MVC Controller:
 
-``` CSharp
+``` csharp
 #if (!DEBUG) 
     [RequireHttps] 
 #endif
@@ -90,19 +90,17 @@ Just don't.  Please.
 Set a value and have your code consume that at runtime.
 
 
-``` XML
+``` xml
 <appSettings>
     <add name="RequireHttpsForLogin" value="true" />
 </appSettings>
-
-
 ```
 
 
 ### Validation checks
 If you want certain things to happen only in Production, include an Environment flag in your settings, then check that and respond appropriately.  
 
-``` CSharp
+``` csharp
 var environment = (string)Reader.GetValue("Environment", typeof(string))
 if(enviroment != Environments.Local){
     // do something

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: SQL Operations - Flagging Records as Not Found
+title: SQL Adventures - Flagging Records as Not Found
 keywords: sql, etl, notfound, not found, exclude, merge, merging data, identifying missing records, missing, where vs on, where vs join, sql where to filter, why filter in join, filtering in left join
 ---
 
-## AKA: Why I want to filter in WHERE vs JOIN
+*AKA: Why I'd want to filter in WHERE vs JOIN*
 
 I came across an interesting scenario for one of my clients.  They have a system which scans database hardware, and then merges the metadata into another database for reporting.
 
@@ -54,7 +54,7 @@ Take note that even though it wasn't in this scan, `Zip` is still in the table, 
 
 Here's the data if you want to follow along
 
-``` SQL
+``` sql
 -- TABLES
 
 DECLARE @TargetObjects TABLE (
@@ -93,7 +93,7 @@ DECLARE @ScanId INT = 2
 
 #### The Wrong Way
 
-``` SQL
+``` sql
 -- The Complete Wrong Way
 SELECT 
     'TargetObjectId' = TargetObject.ObjectId
@@ -120,7 +120,7 @@ TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 
 Let's look at the data without the `WHERE` clause to see what's going on.
 
-``` SQL
+``` sql
 -- No Filter
 SELECT 
     'TargetObjectId' = TargetObject.ObjectId
@@ -147,7 +147,7 @@ TargetObjectId | ScanObjectId | ScanScanId | Name | Type
 Obviously there are no `NULL`, so `ScanObject.ObjectId IS NULL` will always return empty. Even we filter by `ScanId`, you can see how, unsurprisingly, still nothing is `NULL`, and our `Zip` column does not appear at all.
 
 
-``` SQL
+``` sql
 -- Filtering by ScanId in WHERE
 SELECT 
     'TargetObjectId' = TargetObject.ObjectId
@@ -177,7 +177,7 @@ The way to get what we want is to filter inside the `JOIN ON` clause, and not in
 
 Here's what we want to on the opposite side of our "LEFT JOIN".
 
-``` SQL
+``` sql
 -- The other side of our "LEFT JOIN"
 SELECT * 
     FROM @ScanObjects AS ScanObject
@@ -193,7 +193,7 @@ Notice how `ObjectId = 3` and `ScanId = 2` is missing.  This is what we want, be
 
 And here's the Final Answer:
 
-``` SQL
+``` sql
 -- The Complete Right Way
 SELECT 
     'TargetObjectId' = TargetObject.ObjectId
@@ -218,7 +218,7 @@ Hurray!
 
 Then, it's a simple matter of marking the Target as "Not Found"
 
-``` SQL
+``` sql
 -- Flag missing records as NotFound
 UPDATE  TargetObject
     SET NotFound = 1
@@ -233,7 +233,7 @@ WHERE
 
 Checking our answer...
 
-``` SQL
+``` sql
 SELECT * FROM @TargetObjects
 ```
 

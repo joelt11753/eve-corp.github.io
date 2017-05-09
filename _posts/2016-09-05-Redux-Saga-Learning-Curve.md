@@ -13,7 +13,7 @@ For more information, see the [Official Redux-Saga Website](http://yelouafi.gith
 # A Complete Example
 
 ** Feel free to skip down to the [confusing bits](#confusing-bits)
-``` JSX
+``` jsx
 // myContainer.js
 import * as actions from './actions'
 import * as selectors from './selectors'
@@ -50,7 +50,7 @@ export default Connect(mapStateToProps, mapDispatchToProps)(MyContainer);
 
 ```
 
-``` JS
+``` js
 // actions.js
 import {INPUT_SUBMIT, INPUT_CHANGE} from '.\constants';
 
@@ -70,7 +70,7 @@ function inputSubmitted(){
 
 ```
 
-``` JS
+``` js
 // reducers.js
 
 

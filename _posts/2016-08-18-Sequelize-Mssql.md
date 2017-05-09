@@ -12,7 +12,7 @@ You should specify the connection properties with the sequelize parameters since
 
 Below is a basic configuration with some extra parameters defined that you'll probably want.
 
-``` JS
+``` js
 // sequelize.js
 import Sequelize from 'sequelize'
 
@@ -37,7 +37,7 @@ export default sequelize
 
 An easy way to get testing this is to use sequelize's built-in `authenticate()` function, taken from the [sequelize website](http://docs.sequelizejs.com/en/latest/docs/getting-started/) and wrapped in a test
 
-``` JS
+``` js
 // sequelize.test.js
 import sequelize from './sequelize'
 
@@ -85,7 +85,7 @@ ex: `SQLServerManager12.msc`  You may swap out the "12" to match your version of
 
 <img src="/images/2016/sql services.png" alt="sql services screenshot" />
 
-    If it's not running, don't forget to setup `Automatic` start for the future! 
+> If it's not running, don't forget to setup `Automatic` start for the future! 
 
 **4) The login you're using should be mapped to the database you're trying to access.**
 
