@@ -4,6 +4,7 @@
 
 # Name of your site (displayed in the header)
 name: Eve Corp.
+title: Eve Corp.
 
 # Short bio or description (displayed in the header)
 description: #Creating Software that Evolves
@@ -42,7 +43,7 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:  #http://www.eve-corp.com
+url: "" #http://www.eve-corp.com
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -54,21 +55,23 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-markdown: redcarpet
-highlighter: pygments
 permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: v1.1.0
+version: v3.4.3
 
 # Set the Sass partials directory, as we're using @imports
 sass:
   style: :expanded # You might prefer to minify using :compressed
 
+
+markdown: kramdown
+theme: minima
+
 # Use the following plug-ins
 gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-
+  - jekyll-feed
+  
 # Exclude these files from your production _site
 exclude:
     - Gemfile
