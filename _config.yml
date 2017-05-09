@@ -10,8 +10,8 @@ title: Eve Corp.
 description: #Creating Software that Evolves
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: \images\icon_140_140.png
-logo: \images\logo_sub_140_375.png
+avatar: /images/icon_140_140.png
+logo: /images/logo_sub_140_375.png
 
 #
 # Flags below are optional

@@ -4,7 +4,7 @@ title: SQL Adventures - Flagging Records as Not Found
 keywords: sql, etl, notfound, not found, exclude, merge, merging data, identifying missing records, missing, where vs on, where vs join, sql where to filter, why filter in join, filtering in left join
 ---
 
-*AKA: Why I'd want to filter in WHERE vs JOIN*
+*AKA: Choosing where you filter (WHERE vs JOIN)*
 
 I came across an interesting scenario for one of my clients.  They have a system which scans database hardware, and then merges the metadata into another database for reporting.
 
