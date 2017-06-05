@@ -11,7 +11,7 @@ Here's a tip:  You are better off buying existing software.  If you can find a p
 However, sometimes custom software can be the best thing for your business.  It might be right choice if...
 
 * **You have a solid process in place and want to increase throughput.**  
-Say goobye to paper and everything that comes with it, like limited access to decisions, long turn-around times, lack of accountability, human mistakes, etc.
+Say goodbye to paper and everything that comes with it, like limited access to decisions, long turn-around times, lack of accountability, human mistakes, etc.
 
 * **You want different applications to talk to one another.**  
 You absolutely love your time keeping system, but if only it could talk to payroll...
