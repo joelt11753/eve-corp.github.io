@@ -4,7 +4,7 @@ title: Password Security for Testers
 keywords: passwords, application security, white-box testers
 ---
 
-This article is targeted towards white-box / automation testers, but can be used by anybody as an introduction to current best-practices for storing passwords.
+This article is targeted towards white-box testers or SDETS, but can be used by anybody as an introduction to current best-practices for storing passwords.
 
 Below are basic guidelines I follow to develop a secure login portal, whereby our application (and not a third-party, such as Google or Facebook) is responsible for storing usernames and passwords.
 
