@@ -87,6 +87,6 @@ You might think "oh what if I want to show them their answers.  Maybe it should 
 
 ## Further Reading:
 
-* [Play with zxcvdn] (https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
+* [Play with zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 * [Safely Storing User Passwords: Hashing vs. Encrypting](http://www.darkreading.com/safely-storing-user-passwords-hashing-vs-encrypting/a/d-id/1269374)
 
